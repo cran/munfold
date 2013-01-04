@@ -1,0 +1,7 @@
+f166019ef5d08c16480479205e52b3f7 *DESCRIPTION
+34809b1060ed194b2bea57e3593f12d2 *NAMESPACE
+6059624aaed2443c0003fdd8a7878371 *R/Unfold.R
+db29cfdc70b87452116f3e2e0625cc5f *R/procrustes.R
+02528cb7cdffa0ff2ea05e02120c2d37 *R/schoenemann.R
+76948b8b6e79a04ab5a93867ba76b8f3 *man/metricUnfolding.Rd
+8fd747bf9d392081edec2fe378bd1f92 *man/procrustes.Rd

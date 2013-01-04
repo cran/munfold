@@ -25,8 +25,8 @@ unfold(x,...)
 
 \method{biplot}{unfolding}(x, dimen=c(1,2), type=attr(x,"biplot_type"),
   xlim, ylim, tpos=c(4,2), tposdim=1,
-  asp=1, lty=c(1,2), lwd=c(1,1), pch=c(1,3),
-  contour.col="black", contour.lty=1,
+  asp=1, lty=c(1,2), lwd=c(1,1), pch=c(1,3), cex=c(1,1),
+  col=c("black","black"), contour.col="black", contour.lty=1,
   xlab=paste("Dimension ",dimen[1]),
   ylab=paste("Dimension ",dimen[2]),
   \dots)
@@ -95,7 +95,7 @@ uapply(x,FUN)
   \code{dimen[tposdim]} are positioned according to \code{tpos[1]},
   labels of other points are positioned according to \code{tpos[1]}.
   }
-\item{xlab, ylab, xlim, ylim, asp, lty, lwd, pch}{arguments passed to \code{\link[graphics]{plot.default}}.}
+\item{xlab, ylab, xlim, ylim, asp, lty, lwd, pch, cex, col}{arguments passed to base graphics functions}.
 \item{contour.col, contour.lty}{colour and line type for contour lines,
   see \code{\link[graphics]{contour}}. }
 \item{discrete}{a logical vector of lenght 2;
@@ -105,7 +105,7 @@ uapply(x,FUN)
   }
 \item{use.rownames}{logical; should row names used for annotation?}
 \item{\dots}{further arguments passed to \code{\link[stats]{optim}} in
-  case of \code{unfold} or \code{\link[graphics]{plot.default}}
+  case of \code{unfold} or \code{\link[graphics]{points}}
   in case of the plotting methods.}
 \item{FUN}{a function applied to the two sets of points that result
 from the unfolding.}
