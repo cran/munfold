@@ -310,6 +310,8 @@ biplot.unfolding<-function(x,dimen=c(1,2),type=attr(x,"biplot_type"),
     lty=c(1,2),
     lwd=c(1,1),
     pch=c(1,3),
+    cex=c(1,1),
+    col=c("black","black"),
     contour.col="black",
     contour.lty=1,
     xlab=paste("Dimension ",dimen[1]),
@@ -349,32 +351,32 @@ biplot.unfolding<-function(x,dimen=c(1,2),type=attr(x,"biplot_type"),
         contour(D,add=TRUE,lty=contour.lty,col=contour.col)
     }
     else if(tmatch1==2) {
-            if(is.null(tpos)) text(x$A[,dimen],labels=rownames(x$A))
+            if(is.null(tpos)) text(x$A[,dimen],labels=rownames(x$A),col=col[1],cex=cex[1])
             else {
-                points(x$A[,dimen],pch=20)
+                points(x$A[,dimen],pch=20,col=col[1])
                 tpos <- ifelse(x$A[,dimen[tposdim]]<0,tpos[1],tpos[2])
-                text(x$A[,dimen],labels=rownames(x$A[,dimen]),pos=tpos,offset=0.2)
+                text(x$A[,dimen],labels=rownames(x$A[,dimen]),pos=tpos,offset=0.2,col=col[1],cex=cex[1])
             }
         }
-    else if(tmatch1==3) lines(x$A[,dimen],lty=lty[1],lwd=lwd[1])
-    else if(tmatch1==4) lines(x$A[,dimen],type="b",lty=lty[1],pch=pch[1],lwd=lwd[1])
-    else points(x$A[,dimen],pch=1)
+    else if(tmatch1==3) lines(x$A[,dimen],lty=lty[1],lwd=lwd[1],col=col[1])
+    else if(tmatch1==4) lines(x$A[,dimen],type="b",lty=lty[1],pch=pch[1],lwd=lwd[1],col=col[1],cex=cex[1])
+    else points(x$A[,dimen],pch=pch[1],col=col[1],cex=cex[1])
 
     if(tmatch2==1 && require(MASS)) {
         D <- kde2d(x=x$B[,dimen[1]],y=x$B[,dimen[2]],lims=c(xlim,ylim))
         contour(D,add=TRUE,lty=contour.lty,col=contour.col)
     }
     else if(tmatch2==2) {
-            if(is.null(tpos)) text(x$B[,dimen],labels=rownames(x$A))
+            if(is.null(tpos)) text(x$B[,dimen],labels=rownames(x$A),col=col[2],cex=cex[2])
             else {
-                points(x$B[,dimen],pch=20)
+                points(x$B[,dimen],pch=20,col=col[2])
                 tpos <- ifelse(x$B[,dimen[tposdim]]<0,tpos[1],tpos[2])
-                text(x$B[,dimen],labels=rownames(x$B[,dimen]),pos=tpos,offset=0.2)
+                text(x$B[,dimen],labels=rownames(x$B[,dimen]),pos=tpos,offset=0.2,col=col[2],cex=cex[2])
             }
         }
-    else if(tmatch2==3) lines(x$B[,dimen],lty=lty[2],lwd=lwd[2])
-    else if(tmatch2==4) lines(x$B[,dimen],type="b",lty=lty[2],pch=pch[2],lwd=lwd[2])
-    else points(x$B[,dimen],pch=3)
+    else if(tmatch2==3) lines(x$B[,dimen],lty=lty[2],lwd=lwd[2],col=col[2])
+    else if(tmatch2==4) lines(x$B[,dimen],type="b",lty=lty[2],pch=pch[2],lwd=lwd[2],cex=cex[2],col=col[2])
+    else points(x$B[,dimen],pch=pch[2],cex=cex[2],col=col[2])
 
 }
 
